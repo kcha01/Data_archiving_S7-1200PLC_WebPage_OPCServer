@@ -7,6 +7,7 @@ PLCs S7-1200 can only use the OPC server from firmware version 4.4 and above abo
 ![Workstation](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/workstation.jpg?raw=true)
 
 Programme controls DC engine with encoder via cable connected to workstation. Algorythm was created in TIA Portal V17.
+
 ![DC engine with encoder](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/engine.jpg?raw=true)
 
 Web page is controlling pace of engine, an alarm and shows number of counted impulses.
