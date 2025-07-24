@@ -24,10 +24,11 @@ Open command line as an administrator and type this command:
 ## How it works?
 ![Connect_Panel](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/connect_panel.PNG?raw=true)
 ### 1. Type OPC Server IP and click "Pobierz endpoint'y". After this operation, all endpoints will be written.
-### 2. Select one of the endpoints, type login and password if needed and click "Połącz". A message about a successful connection will appear. Button "Odłącz" will disconnect this workbook from OPC UA server endpoint.
+### 2. Select one of the endpoints, type login and password if needed and click "Połącz".
+A message about a successful connection will appear. Button "Odłącz" will disconnect this workbook from OPC UA server endpoint.
 ![Archive_Panel](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/archive.PNG?raw=true)
 ### 3. Type NodeId values and click "Subskrybuj". From now on every change of alarm will be stored in archive.
-### 4. Button "Odsubskrybuj" will end subscription. Button "Wyczyść" clears up to 100 records in archive.
+Button "Odsubskrybuj" will end subscription. Button "Wyczyść" clears up to 100 records in archive.
 
 ### To read NodeID's use UaExpert. Link:https://www.unified-automation.com/products/development-tools/uaexpert.html
 ![NodeIds](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/NodeIds.png?raw=true)
