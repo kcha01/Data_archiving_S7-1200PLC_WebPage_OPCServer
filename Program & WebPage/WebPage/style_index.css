@@ -1,0 +1,49 @@
+body {
+  font-size: 16px; 
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+header {
+  font-size: 30px; 
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.button {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  padding: 16px 32px;
+  font-size: 24px; 
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  margin: 20px 0;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+.button:active {
+  background-color: #333;
+  transform: scale(1);
+}
+
+.logo {
+  width: 350px; 
+  height: auto;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 30px; 
+  margin: 20px 0;
+}

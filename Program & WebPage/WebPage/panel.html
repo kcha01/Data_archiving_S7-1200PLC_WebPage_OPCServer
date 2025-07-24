@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- AWP_In_Variable Name ='"WWW".Start' -->
+<!-- AWP_In_Variable Name ='"WWW".Stop' -->
+<!-- AWP_In_Variable Name ='"WWW".Zwiększ' -->
+<!-- AWP_In_Variable Name ='"WWW".Zmniejsz' -->
+<!-- AWP_In_Variable Name ='"WWW".Alarm_start' -->
+<!-- AWP_In_Variable Name ='"WWW".Potwierdzenie' -->
+
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel sterujący</title>
+    <link rel="stylesheet" href="style_panel.css">
+    
+    <script>
+        function aktualizujImpulsy() {
+            fetch("impulsy.htm")
+            .then(response => response.text())
+            .then(data => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(data, "text/html");
+            const impuls = doc.getElementById("impuls_value")?.textContent?.trim();
+
+            if (impuls) {
+                document.getElementById("impuls_output").textContent = impuls;
+            }
+        })
+        .catch(err => console.error("Błąd przy pobieraniu impulsów:", err));
+        }
+    aktualizujImpulsy();
+    setInterval(aktualizujImpulsy, 1000);
+    </script>
+</head>
+<body>
+    <header>Archiwizacja danych w oparciu o sterownik S7-1200, stronę web oraz serwer OPC</header>
+    <div class="page-content">
+
+        <div class="out-variable">
+            <h1>Ilość zliczonych impulsów: <span id="impuls_output" style="color: blue">...</span></h1>
+        </div>
+
+
+    <div class="main-container">
+        <!-- Lewy panel sterujący -->
+        <div class="panel">
+            <div class="panel-title">Panel sterujący</div>
+            <div class="panel-content">
+                <div class="button-columns">
+                    <div class="button-column">
+                        <form>
+                            <button class="control-button" role="button">
+                                <span class="button-content">Start</span>
+                                <input type="hidden" name='"WWW".Start' value="1">
+                            </button>
+                        </form>
+                        
+                        <form>
+                            <button class="control-button" role="button">
+                                <span class="button-content">Zwiększ prędkość</span>
+                                <input type="hidden" name='"WWW".Zwiększ' value="1">
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="button-column">
+                        <form>
+                            <button class="control-button" role="button">
+                                <span class="button-content">Stop</span>
+                                <input type="hidden" name='"WWW".Stop' value="1">
+                            </button>
+                        </form>
+                        
+                        <form>
+                            <button class="control-button" role="button">
+                                <span class="button-content">Zmniejsz prędkość</span>
+                                <input type="hidden" name='"WWW".Zmniejsz' value="1">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Prawy panel alarmowy -->
+        <div class="panel">
+            <div class="panel-title">Panel alarmowy</div>
+            <div class="panel-content">
+                <form>
+                    <button class="control-button" role="button">
+                        <span class="button-content">Wykrycie awarii</span>
+                        <input type="hidden" name='"WWW".Alarm_start' value="1">
+                    </button>
+                </form>
+                
+                <form>
+                    <button class="control-button" role="button">
+                        <span class="button-content">Awaria naprawiona</span>
+                        <input type="hidden" name='"WWW".Alarm_start' value="0">
+                    </button>
+                </form>
+                
+                <form>
+                    <button class="control-button" role="button">
+                        <span class="button-content">Potwierdzenie awarii</span>
+                        <input type="hidden" name='"WWW".Potwierdzenie' value="1">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a href="index.html" class="nav-button">Powrót do strony głównej</a>
+    </div>
+</body>
+</html>
