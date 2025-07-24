@@ -29,6 +29,8 @@ impulsy.htm file communicates using AWP command.
 | `Potwierdzenie awarii` | Confirms alarm             |
 
 To communicate with PLC, these buttons are programmed with AWP commands. They work in SET/RESET mode. Reset operations are handled by PLC programme (except "Wykrycie awarii" and "Awaria naprawiona"). 
+
 ![AWP](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/awp.PNG?raw=true)
+
 ![Button](https://github.com/kcha01/Data_archiving_S7-1200PLC_WebPage_OPCServer/blob/main/Screenshots/buttons.PNG?raw=true)
 
